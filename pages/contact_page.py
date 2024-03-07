@@ -30,7 +30,7 @@ class ContactPage(BasePage):
         assert partners_city.text == city, f"Ошибка определения списка партнеров: ({partners_city.text}) вместо ({city})"
 
     def modify_region(self, region_to_replace):
-        region_to_replace_locator = (By.XPATH, f"//span[@title='{region_to_replace}']")
+        region_to_replace_locator = (By.XPATH, f"//span[@title='{region_to_replace}']/span")
         region = self.find_element(Locator.REGION)
         region.click()
         modified_region = self.find_element(region_to_replace_locator)

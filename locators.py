@@ -15,5 +15,7 @@ class Locator:
     WORKING = (By.XPATH, "//h2[text()='Работаем']")
     IMAGE = (By.XPATH, "//div[@class='tensor_ru-About__block3-image-wrapper']")
 
+    DOWNLOAD_SBIS = (By.XPATH, "//a[text()='Скачать локальные версии']")
+
 
 

@@ -32,6 +32,7 @@ def test_modify_region(browser):
     contact_page = ContactPage(browser, browser.current_url)
     contact_page.modify_region(region_to_replace)
     time.sleep(3)
+
     contact_page.check_current_region(region_to_replace)
     contact_page.check_partners_list(partners_city)
     contact_page.check_url_and_title()

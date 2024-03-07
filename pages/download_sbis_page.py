@@ -11,4 +11,9 @@ class DownloadSbisPage(BasePage):
         page_for_windows = self.find_element(Locator.WINDOWS)
         page_for_windows.click()
 
+    def download_plugin(self):
+        download_plugin_link = self.find_element(Locator.DOWNLOAD_PLUGIN_LINK)
+        download_plugin_link.click()
+
+
 

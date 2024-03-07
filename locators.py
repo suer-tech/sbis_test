@@ -15,8 +15,9 @@ class Locator:
     WORKING = (By.XPATH, "//h2[text()='Работаем']")
     IMAGE = (By.XPATH, "//div[@class='tensor_ru-About__block3-image-wrapper']")
 
-    DOWNLOAD_SBIS = (By.XPATH, "//a[text()='Скачать локальные версии']")
+    DOWNLOAD_SBIS = (By.XPATH, "//a[@href='/download']")
     SBIS_PLUGIN = (By.XPATH, "//div[text()='СБИС Плагин']")
     WINDOWS = (By.XPATH, "//span[text()='Windows']")
+    DOWNLOAD_PLUGIN_LINK = (By.XPATH, "//a[@href='https://update.sbis.ru/Sbis3Plugin/master/win32/sbisplugin-setup-web.exe']")
 
 

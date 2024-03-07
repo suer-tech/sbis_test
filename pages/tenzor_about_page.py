@@ -3,19 +3,8 @@ from pages.base_page import BasePage
 
 
 class TenzorAbout(BasePage):
-
-    def go_to_power_in_people_block_details(self):
-        details = self.find_element(Locator.POWER_IN_PEOPLE_BLOCK_DETAILS)
-        if details:
-            sila_details = details[3]
-            sila_details.click()
-
     def find_working_block(self):
-        try:
-            block_working = self.find_element(Locator.WORKING)
-            return True
-        except:
-            return False
+        assert self.find_element(Locator.WORKING), "Раздел 'Работаем' не найден"
 
     def check_width_and_height_images(self):
         images = self.find_elements(Locator.IMAGE)

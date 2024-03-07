@@ -1,4 +1,4 @@
-from telnetlib import EC
+from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.common import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
@@ -19,7 +19,7 @@ class BasePage:
             )
 
     def find_elements(self, locator, time=10):
-        return WebDriverWait(self.driver, time).until(
+        return WebDriverWait(self.browser, time).until(
             EC.presence_of_all_elements_located(locator),
             message=f"Can't find elements by locator {locator}",
         )

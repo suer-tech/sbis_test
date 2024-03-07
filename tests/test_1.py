@@ -16,14 +16,7 @@ def test_open_tenzor_baanner(browser):
     home_page.open_contacts_page()
     contact_page = ContactPage(browser, browser.current_url)
     contact_page.open_tensor_banner()
-
-    windows = browser.window_handles
-    if len(windows) > 1:
-        browser.switch_to.window(windows[-1])
-
-    assert (
-            "https://tensor.ru/" in browser.current_url
-    ), "Ошибка открытия страницы tensor.ru из раздела Контакты"
+    contact_page.switch_to_tensor_home_page()
 
 
 def test_power_in_people_block(browser):
@@ -38,10 +31,6 @@ def test_open_power_in_people_block_details(browser):
     tenzor_home_page = TenzorHomePage(browser, url)
     tenzor_home_page.go_to_site()
     tenzor_home_page.go_to_power_in_people_block_details()
-
-    assert (
-            "https://tensor.ru/about" == browser.current_url
-    ), "Ошибка открытия страницы 'Подробнее' из раздела 'Сила в людях'"
 
 
 def test_width_and_height_images(browser):

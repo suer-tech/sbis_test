@@ -11,3 +11,7 @@ class TenzorHomePage(BasePage):
             Locator.POWER_IN_PEOPLE_BLOCK_DETAILS
         )
         self.browser.execute_script("arguments[0].click();", details)
+
+        assert (
+                "https://tensor.ru/about" == self.browser.current_url
+        ), "Ошибка открытия страницы 'Подробнее' из раздела 'Сила в людях'"

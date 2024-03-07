@@ -1,3 +1,5 @@
+import time
+
 from pages.contact_page import ContactPage
 from pages.home_page import HomePage
 
@@ -22,24 +24,18 @@ def test_region_and_partners_list(browser):
 
 def test_modify_region(browser):
     region_to_replace = "Камчатский край"
-
-    url = 'https://sbis.ru/'
-    home_page = HomePage(browser, url)
-    home_page.open_contacts_page()
-    contact_page = ContactPage(browser, browser.current_url)
-    contact_page.modify_region(region_to_replace)
-
-
-def test_updated_region_and_partners_list(browser):
-    region = "Камчатский край"
     partners_city = "Петропавловск-Камчатский"
 
     url = 'https://sbis.ru/'
     home_page = HomePage(browser, url)
     home_page.open_contacts_page()
     contact_page = ContactPage(browser, browser.current_url)
-    contact_page.check_current_region(region)
+    contact_page.modify_region(region_to_replace)
+    time.sleep(3)
+    contact_page.check_current_region(region_to_replace)
     contact_page.check_partners_list(partners_city)
     contact_page.check_url_and_title()
+
+
 
 

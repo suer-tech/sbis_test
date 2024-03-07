@@ -21,7 +21,7 @@ class ContactPage(BasePage):
 
     def check_current_region(self, region):
         current_region = self.find_element(Locator.REGION)
-        assert (current_region.text == region), f"Ошибка определения региона: ({current_region.text}) вместо ({region})"
+        assert current_region.text == region, f"Ошибка определения региона: ({current_region.text}) вместо ({region})"
 
     def check_partners_list(self, city):
         partners_lists = self.find_element(Locator.PARTNERS_LIST)

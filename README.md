@@ -40,7 +40,7 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-### 8. Запустите сервер:
+### 8. Запустите тесты:
 
 Выполните команды для запуска тестовых сценариев по очереди:
 ```bash

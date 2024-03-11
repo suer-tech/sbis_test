@@ -7,6 +7,7 @@ class TenzorHomePage(BasePage):
         assert self.find_element(Locator.POWER_IN_PEOPLE_BLOCK), "Раздел 'Сила в людях' не найден"
 
     def go_to_power_in_people_block_details(self):
+        assert self.check_element(Locator.POWER_IN_PEOPLE_BLOCK_DETAILS) is True, "Не найден раздел 'Сила в людях'"
         details = self.find_element(
             Locator.POWER_IN_PEOPLE_BLOCK_DETAILS
         )

@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-
 from locators import Locator
 from pages.base_page import BasePage
 
@@ -7,6 +6,7 @@ from pages.base_page import BasePage
 class ContactPage(BasePage):
 
     def open_tensor_banner(self):
+        assert self.check_element(Locator.TENZOR_BANNER) is True, "Не найден беннер Тензор"
         tensor_banner = self.find_element(Locator.TENZOR_BANNER)
         tensor_banner.click()
 
@@ -20,10 +20,12 @@ class ContactPage(BasePage):
         ), "Ошибка открытия страницы tensor.ru из раздела Контакты"
 
     def check_current_region(self, region):
+        assert self.check_element(Locator.REGION) is True, "Не найден раздел выбора региона"
         current_region = self.find_element(Locator.REGION)
         assert current_region.text == region, f"Ошибка определения региона: ({current_region.text}) вместо ({region})"
 
     def check_partners_list(self, city):
+        assert self.check_element(Locator.PARTNERS_LIST) is True, "Не найден раздел с партнерами региона"
         partners_lists = self.find_element(Locator.PARTNERS_LIST)
         partners_city = self.find_element(Locator.CITY)
         assert partners_lists, "Ошибка получения списка партнеров"

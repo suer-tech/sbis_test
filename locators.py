@@ -15,9 +15,10 @@ class Locator:
     WORKING = (By.XPATH, "//h2[text()='Работаем']")
     IMAGE = (By.XPATH, "//div[@class='tensor_ru-About__block3-image-wrapper']")
 
-    DOWNLOAD_SBIS = (By.XPATH, "//a[@href='/download']")
-    SBIS_PLUGIN = (By.XPATH, "//div[text()='СБИС Плагин']")
-    WINDOWS = (By.XPATH, "//span[text()='Windows']")
-    DOWNLOAD_PLUGIN_LINK = (By.XPATH, "//a[@href='https://update.sbis.ru/Sbis3Plugin/master/win32/sbisplugin-setup-web.exe']")
+    DOWNLOAD_SBIS = (By.LINK_TEXT, 'Скачать локальные версии')
+    SBIS_PLUGIN = (By.XPATH, "//div[@class='controls-TabButton controls-TabButton__right-align controls-ListView__item undefined ws-enabled ws-control-inactive ws-component' and ./div[@class='controls-TabButton__inner']/div[@class='controls-TabButton__wrapper']/div[@class='controls-TabButton__caption' and text()='СБИС Плагин']]")
+    WINDOWS = (By.XPATH, '//span[text()="Windows"]')
+    DOWNLOAD_PLUGIN_LINK = (By.XPATH, "//a[text()='Скачать (Exe 8.17 МБ) ']")
+    DOWNLOAD_PLUGIN_SIZE = 8.17
 
 

@@ -26,7 +26,7 @@ class BasePage:
 
     def check_element(self, locator):
         try:
-            self.visibility_of_element_located(locator)
+            self.find_element(locator)
         except NoSuchElementException:
             return False
         return True
